@@ -1,0 +1,276 @@
+/* Easing functions for transitions */
+:root {
+  --hover-easing: cubic-bezier(0.23, 1, 0.32, 1);
+  --return-easing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+body {
+  margin: 40px 0;
+  font-family: "Raleway";
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.title {
+  font-family: "Raleway";
+  font-size: 24px;
+  font-weight: 700;
+  color: #5D4037;
+  text-align: center;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+h1 + p, p + p {
+  margin-top: 10px;
+}
+
+.container {
+  padding: 40px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-wrap {
+  margin: 10px;
+  transform: perspective(800px);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card-wrap:hover .card-info {
+  transform: translateY(0);
+  transition: 0.6s var(--hover-easing);
+}
+
+.card-wrap:hover .card-info p {
+  opacity: 1;
+  transition: 0.6s var(--hover-easing);
+}
+
+.card-wrap:hover .card-info:after {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 5s var(--hover-easing);
+}
+
+.card-wrap:hover .card-bg {
+  opacity: 0.8;
+  transition: 0.6s var(--hover-easing), opacity 5s var(--hover-easing);
+}
+
+.card-wrap:hover .card {
+  box-shadow:
+    rgba(255, 255, 255, 0.2) 0 0 40px 5px,
+    rgba(255, 255, 255, 1) 0 0 0 1px,
+    rgba(0, 0, 0, 0.66) 0 30px 60px 0,
+    inset #333 0 0 0 5px,
+    inset #fff 0 0 0 6px;
+  transition: 0.6s var(--hover-easing), box-shadow 2s var(--hover-easing);
+}
+
+.card {
+  position: relative;
+  flex: 0 0 240px;
+  width: 240px;
+  height: 320px;
+  background-color: #333;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow:
+    rgba(0, 0, 0, 0.66) 0 30px 60px 0,
+    inset #333 0 0 0 5px,
+    inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+  transition: 1s var(--return-easing);
+}
+
+.card-bg {
+  opacity: 0.5;
+  position: absolute;
+  top: -20px; left: -20px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: 1s var(--return-easing), opacity 5s 1s var(--return-easing);
+  pointer-events: none;
+}
+.invisible-box {
+  height: 100px; /* Adjust the height as needed */
+}
+
+.card-info {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  transform: translateY(40%);
+  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.card-info p {
+  opacity: 0;
+  text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
+  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.card-info * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-info:after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+  background-blend-mode: overlay;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 5s 1s var(--return-easing);
+}
+
+.card-info h1 {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg: #222;
+  --clr: #fff;
+}
+body {
+ 
+  background: var(--bg);
+}
+ul {
+  position: relative;
+  display: flex;
+  gap: 50px;
+}
+ul li {
+  position: relative;
+  list-style: none;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  inset: 30px;
+  box-shadow: 0 0 0 10px var(--clr),
+              0 0 0 20px var(--bg),
+              0 0 0 22px var(--clr);
+  transition: 0.5s;
+}
+ul li:hover::before {
+  inset: 15px;
+}
+ul li::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+ul li:hover::after {
+  inset: 0px;
+  transform: rotate(0deg);
+}
+ul li a {
+  position: relative;
+  text-decoration: none;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul li a i {
+  font-size: 2em;
+  transition: 0.5s;
+  color: var(--clr);
+  opacity: 1;
+}
+ul li:hover a i {
+  color: var(--clr);
+  transform: translateY(-40%);
+}
+ul li a span {
+  position: absolute;
+  font-family: sans-serif;
+  color: var(--clr);
+  opacity: 0;
+  transition: 0.5s;
+  transform: scale(0) translateY(200%);
+}
+ul li:hover a span {
+  opacity: 1;
+  transform: scale(1) translateY(100%);
+}
+ul li:hover a i,
+ul li a span {
+  filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0 40px var(--clr)) drop-shadow(0 0 60px var(--clr));
+}
+ul.top-menu {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 20px;
+  top: 0;
+  width: 100%;
+  background: var(--bg);
+  padding: 10px 0;
+  z-index: 1000;
+  background-color: #14425700; /* Ensure you provide the correct path to your background image */
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center; /* Center the background image */
+}
+
+/* Style for the logo container */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 20px;
+  top: 0;
+  width: 100%;
+  background: var(--bg);
+  padding: 10px 0;
+  z-index: 1000;
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center;
+  text-align: center;
+  margin-bottom: 1rem; /* Space between the logo and the top menu */
+}
+
+.logo-container img {
+  max-width: 200; /* Ensure the logo scales responsively */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin-top: -10px;
+}
