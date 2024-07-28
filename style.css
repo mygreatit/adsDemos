@@ -239,8 +239,10 @@ ul.top-menu {
   justify-content: center;
   gap: 50px;
   margin-bottom: 20px;
+  margin-top: 20px;
   top: 0;
   width: 100%;
+  position: absolute;
   background: var(--bg);
   padding: 10px 0;
   z-index: 1000;
@@ -255,10 +257,11 @@ ul.top-menu {
   display: flex;
   justify-content: center;
   gap: 50px;
+  position: fixed;
   margin-bottom: 20px;
+  margin-top: 120px;
   top: 0;
   width: 100%;
-  background: var(--bg);
   padding: 10px 0;
   z-index: 1000;
   background-size: cover; /* Ensure the image covers the entire background */
