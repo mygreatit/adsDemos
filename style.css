@@ -77,8 +77,8 @@ h1 + p, p + p {
 .card {
   position: relative;
   flex: 0 0 240px;
-  width: 240px;
-  height: 320px;
+  width: 340px;
+  height: 420px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;
@@ -242,8 +242,7 @@ ul.top-menu {
   margin-top: 20px;
   top: 0;
   width: 100%;
-  position: absolute;
-  background: var(--bg);
+  position: fixed;
   padding: 10px 0;
   z-index: 1000;
   background-color: #14425700; /* Ensure you provide the correct path to your background image */
@@ -257,7 +256,7 @@ ul.top-menu {
   display: flex;
   justify-content: center;
   gap: 50px;
-  position: fixed;
+  position: absolute;
   margin-bottom: 20px;
   margin-top: 120px;
   top: 0;
