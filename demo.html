@@ -1,22 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Playlist</title>
-    <link rel="stylesheet" href="demostyle.css">
+    <meta charset="utf-8" />
+    <title>Video Gallery Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="demosFold/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="demosFold/font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="demosFold/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="demosFold/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="main-video">
-            <video controls></video>
-            
-        </div>
-        <div></div>
-        <div class="video-playlist" >
-            <div class="videos"></div>
+
+<div class="container">
+
+<div class="page-header">
+    <img src="Great --- IT.png" alt="Great IT Logo"><h2>Gallery</h2>
+</div>
+
+<!-- Video Gallery - START -->
+<div class="container-fluid pb-video-container">
+    <div class="col-md-10 col-md-offset-1">
+        <h3 class="text-center">Video</h3>
+        <div class="row pb-row">
+            <div class="col-md-3 pb-video">
+                <video class="pb-video-frame" width="100%" height="230" controls>
+                    <source src="demos/1.mp4" type="video/mp4">
+                </video>
+                <label class="form-control label-warning text-center">Google console</label>
+            </div>
+            <div class="col-md-3 pb-video">
+                <video class="pb-video-frame" width="100%" height="230" controls>
+                    <source src="demos/2.mp4" type="video/mp4">
+                </video>
+                <label class="form-control label-warning text-center">Hair oil</label>
+            </div>
+            <div class="col-md-3 pb-video">
+                <video class="pb-video-frame" width="100%" height="230" controls>
+                    <source src="demos/3.mp4" type="video/mp4">
+                </video>
+                <label class="form-control label-warning text-center">Air Travel agency</label>
+            </div>
+            <div class="col-md-3 pb-video">
+                <video class="pb-video-frame" width="100%" height="230" controls>
+                    <source src="demos/4.mp4" type="video/mp4">
+                </video>
+                <label class="form-control label-warning text-center">IT shop</label>
+            </div>
+            <div class="col-md-3 pb-video">
+                <video class="pb-video-frame" width="100%" height="230" controls>
+                    <source src="demos/5.mp4" type="video/mp4">
+                </video>
+                <label class="form-control label-warning text-center">Air Travel</label>
+            </div>
+            <div class="col-md-3 pb-video">
+                <video class="pb-video-frame" width="100%" height="230" controls>
+                    <source src="demos/6.mp4" type="video/mp4">
+                </video>
+                <label class="form-control label-warning text-center">Air Travel</label>
+            </div>
+            <div class="col-md-3 pb-video">
+                <video class="pb-video-frame" width="100%" height="230" controls>
+                    <source src="demos/7.mp4" type="video/mp4">
+                </video>
+                <label class="form-control label-warning text-center">Air Travel</label>
+            </div>
+            <div class="col-md-3 pb-video">
+                <video class="pb-video-frame" width="100%" height="230" controls>
+                    <source src="demos/8.mp4" type="video/mp4">
+                </video>
+                <label class="form-control label-warning text-center">Delivery</label>
+            </div>
+            <div class="col-md-3 pb-video">
+                <video class="pb-video-frame" width="100%" height="230" controls>
+                    <source src="demos/9.mp4" type="video/mp4">
+                </video>
+                <label class="form-control label-warning text-center">Product</label>
+            </div>
+            <div class="col-md-3 pb-video">
+                <video class="pb-video-frame" width="100%" height="230" controls>
+                    <source src="demos/10.mp4" type="video/mp4">
+                </video>
+                <label class="form-control label-warning text-center">Upcomming</label>
+            </div>
         </div>
     </div>
-    <script src="demoscript.js"></script>
+</div>
+
+<style>
+    .page-header h2 {
+            padding-left: 20px;
+            padding-right: 20px;
+            color: rgb(255, 253, 253);
+            background-color: #19924c; /* Text color */
+        }
+     .page-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .page-header img {
+            width: 100px; /* Adjust the width as needed */
+            height: auto;
+        }
+
+        .page-header h2 {
+            margin-top: 10px;
+        }
+    .page-header img {
+            width: 100px; /* Adjust the width as needed */
+            height: auto;
+        }
+    .pb-video-container {
+        padding-top: 20px;
+        background: #bdc3c7;
+        font-family: Lato;
+    }
+
+    .pb-video {
+        border: 1px solid #e6e6e6;
+        padding: 5px;
+    }
+
+    .pb-video:hover {
+        background: #2c3e50;
+    }
+
+    .pb-video-frame {
+        transition: width 2s, height 2s;
+    }
+
+    .pb-video-frame:hover {
+        height: 300px;
+    }
+
+    .pb-row {
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- Video Gallery - END -->
+
+</div>
+
 </body>
 </html>
